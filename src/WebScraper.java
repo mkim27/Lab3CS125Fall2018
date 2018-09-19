@@ -6,7 +6,7 @@ public class WebScraper {
     public static void main(String[] args) {
         System.out.println(urlToString("http://erdani.com/tdpl/hamlet.txt"));
         System.out.println(wordCount("http://erdani.com/tdpl/hamlet.txt"));
-        System.out.println(wordFoundCount("http://erdani.com/tdpl/hamlet.txt", "shoot"));
+        System.out.println(wordFoundCount("http://erdani.com/tdpl/hamlet.txt", "four"));
     }
 
     /**
@@ -49,6 +49,7 @@ public class WebScraper {
     public static int wordFoundCount(final String url, final String wordToFind) {
         Scanner wordFinder = new Scanner(urlToString(url));
         int wordFoundTimes = 0;
+
         while (wordFinder.hasNext()) {
             wordFinder.next();
             if (wordFinder.equals(wordToFind)) {
